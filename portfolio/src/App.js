@@ -8,7 +8,7 @@ function App() {
   const clickBox = () => {
     if(boxed){
       api.start({
-        from: {height: 300},
+        from: {height: 600},
         to: {height: 100},
         config: {
           mass: 1,
@@ -21,7 +21,7 @@ function App() {
       setBoxed(true)
       api.start({
         from: {height: 100},
-        to: {height: 300},
+        to: {height: 600},
         config: {
           mass: 1,
           friction: 100,
@@ -45,13 +45,22 @@ function App() {
         >
         
         <>
-          This box has not been clicked...YET! <br></br>
+          <p>This box has not been clicked...YET! </p>
         </>
         {boxed && 
         <>
-          Wow, you really clicked that box didn't you?
-          Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum 
-          Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum
+          <p>
+            Wow, you really clicked that box didn't you?
+            Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum 
+            Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum
+          </p>
+
+          <p>
+            Wow, you really clicked that box didn't you?
+            Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum 
+            Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum Lorem Ipsuum
+          </p>
+
         </>
         }
 
