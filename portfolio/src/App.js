@@ -24,7 +24,7 @@ function App() {
         to: {height: 600},
         config: {
           mass: 1,
-          friction: 100,
+          friction: 200,
           tension: 500,
         },
       })
