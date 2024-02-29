@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  color: white;
+  font-size: calc(10px + 1rem);
+}
+
+.box{
+  position: relative;
+  overflow: clip;
+  top: 10rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: auto;
+  max-width: 400px;
+}
+
+.box:hover{
+  cursor: pointer;
+}
