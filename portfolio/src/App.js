@@ -9,36 +9,21 @@ function App() {
   const boxRef = useRef(null)
 
   const clickBox = () => {
+    setBoxed(!boxed)
+    api.start({
+      to: {height: boxed ? boxRef.current.offsetHeight : 0, opacity: boxed ? 1 : 0,},
+      config: {
+        mass: 1,
+        tension: 170, 
+        friction: 26
+      },
+    })
   
-    if(boxed){
-      api.start({
-        from: {height: 0, opacity: 0,},
-        to: {height: boxRef.current.offsetHeight, opacity: 1,},
-        config: {
-          mass: 1,
-          tension: 170, 
-          friction: 26
-        },
-      })
-      setBoxed(false)
-    } else{
-      setBoxed(true)
-      api.start({
-        from: {height: boxRef.current.offsetHeight, opacity: 1,},
-        to: {height: 0, opacity: 0,},
-        config: {
-          mass: 1,
-          tension: 170, 
-          friction: 26
-        },
-      })
-    }
   }
 
   const rotateX = () => {
     setRotatedX(!rotatedX)
-    api.start({
-      from: {rotateX: rotatedX ? "90deg" : '0deg',},
+    api.start({// removing the "from" field makes the animation smoother by starting where it is and not where the "from" field says
       to: {rotateX: rotatedX ? "0deg" : '90deg'}
 
     })
@@ -46,8 +31,7 @@ function App() {
 
   const factoring = () => { // factor: 10,
     setFactor(!factor)
-    api.start({
-      from: {factor: factor ? 10 : 0 , scale: factor ? 1 : 0.5, freq: factor ? '0.175, 0.0' : '0.0, 0.0'},
+    api.start({ // removing the "from" field makes the animation smoother by starting where it is and not where the "from" field says
       to: {factor: factor ? 0 : 10, scale: factor ? 0.5 : 1, freq: factor ? '0.0, 0.0' : '0.0175, 0.0'},
       config: { duration: 1000 },
 
