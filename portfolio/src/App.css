@@ -13,14 +13,24 @@
   margin: auto;
   padding: 20px 10px;
   max-width: 600px;
+  height: 100%;
+  width: 100%;
 }
 
 .box:hover{
   cursor: pointer;
 }
 
+.openBox::-webkit-scrollbar {
+  display: none;
+}
+
 .openBox{
-  margin: 10px auto;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-height: 400px;
 }
 
 .buttonList{
